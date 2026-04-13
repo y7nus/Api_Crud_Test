@@ -1,0 +1,17 @@
+{
+  "id": "PET_ID",
+  "category": {
+    "id": 1,
+    "name": "Kopek"
+  },
+  "name": "DOG_NAME",
+  "photoUrls": [
+    "https://resimurl.com/kopek.jpg"
+  ],
+  "tags": [{
+      "id": 1,
+      "name": "Sokak Kopegi"
+    }
+  ],
+  "status": "STATUS_VALUE"
+}
