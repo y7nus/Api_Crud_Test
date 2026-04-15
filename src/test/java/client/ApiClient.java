@@ -3,7 +3,6 @@ package client;
 import base.BaseApi;
 import io.restassured.parsing.Parser;
 import io.restassured.response.Response;
-
 import static StepImplementations.PetStepImplementations.response;
 import static io.restassured.RestAssured.given;
 
@@ -35,6 +34,7 @@ public class ApiClient extends BaseApi {
                         .response();
         return response;
     }
+
 
     public Response put(String path, String body) {
         response =

@@ -27,7 +27,7 @@ public class PetStepImplementations extends BaseApi {
 
         // Verileri düzenler
         String finalBody = jsonTemplate
-                .replace("\"PET_ID\"", String.valueOf(petId))
+                .replace("PET_ID", String.valueOf(petId))
                 .replace("DOG_NAME", "Karabas")
                 .replace("STATUS_VALUE", "available");
 
@@ -54,13 +54,17 @@ public class PetStepImplementations extends BaseApi {
    }
         System.out.println(">>> Sorgu atılan URL: /pet/" + petId);
         System.out.println(">>> API'den dönen Status Code: " + response.statusCode());
+
+        System.out.println("-----------------------------------------------------");
+        System.out.println(">>> Sunucudan gelen pet detayları: ");
+        System.out.println(response.asPrettyString());
+        System.out.println("-----------------------------------------------------");
     }
 
     @Step("Pet bilgilerini güncelle")
     public void updatePet() throws Exception {
         String jsonTemplate = new String(Files.readAllBytes(Paths.get("src/test/resources/pet.json")));
 
-        // Değişkenleri tırnak işaretleriyle beraber hedef alalım ki format bozulmasın
         String finalBody = jsonTemplate
                 .replace("PET_ID", String.valueOf(petId))
                 .replace("DOG_NAME", "Karabas Updated")
@@ -78,7 +82,6 @@ public class PetStepImplementations extends BaseApi {
             response = client.delete("/pet/" + petId);
             System.out.println(">>> Silme denendi. Kod: " + response.statusCode());
         } catch (Exception e) {
-            // Eğer 404 alırsak ve aslında silinmişse testi patlatma
             System.out.println(">>> Pet zaten yerinde yok veya silindi.");
         }
     }
@@ -92,7 +95,6 @@ public class PetStepImplementations extends BaseApi {
             // GET isteğini atıyoruz
             response = client.get("/pet/" + petId);
 
-            // Eğer kod buraya gelebildiyse (hata fırlatmadıysa) kodu kontrol et
             int actualStatusCode = response.statusCode();
             System.out.println(">>> Silinme Kontrolü Yapılıyor. Gelen Kod: " + actualStatusCode);
             Assert.assertEquals("Hata: Pet hala silinmemiş!", 404, actualStatusCode);

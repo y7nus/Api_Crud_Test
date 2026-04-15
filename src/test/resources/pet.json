@@ -1,5 +1,5 @@
 {
-  "id": "PET_ID",
+  "id": PET_ID,
   "category": {
     "id": 1,
     "name": "Kopek"
