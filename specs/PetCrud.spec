@@ -4,12 +4,18 @@ Bu senaryo, ID'yi API'den dinamik olarak alıp tüm süreci onun üzerinden yön
 
 ## Pet Oluşturma
 * Pet için temel ayarları yap
-* Pet oluştur ve gerçek ID'yi sakla
+* Table ile Pet oluştur ve gerçek ID'yi sakla
+| name    | status    |
+|---------|-----------|
+| Karabas | Available |
 * status code "200" olmalı
 
 ## Pet oluşturma ve oluşturulan peti getirme
 * Pet için temel ayarları yap
-* Pet oluştur ve gerçek ID'yi sakla
+* Table ile Pet oluştur ve gerçek ID'yi sakla
+| name    | status    |
+|---------|-----------|
+| Karabas | Available |
 * status code "200" olmalı
 * Oluşturulan ID ile peti getir
 * status code "200" olmalı
@@ -18,11 +24,17 @@ Bu senaryo, ID'yi API'den dinamik olarak alıp tüm süreci onun üzerinden yön
 
 ## Pet oluşturma, getirme ve güncellenen peti getirme
 * Pet için temel ayarları yap
-* Pet oluştur ve gerçek ID'yi sakla
+* Table ile Pet oluştur ve gerçek ID'yi sakla
+| name    | status    |
+|---------|-----------|
+| Karabas | Available |
 * status code "200" olmalı
 * Oluşturulan ID ile peti getir
 
-* Pet bilgilerini güncelle
+* Table ile Pet bilgilerini güncelle
+| newName         | newStatus    |
+|-----------------|--------------|
+| Karabas Updated | Sold         |
 
 * Oluşturulan ID ile peti getir
 * status code "200" olmalı
@@ -31,7 +43,10 @@ Bu senaryo, ID'yi API'den dinamik olarak alıp tüm süreci onun üzerinden yön
 
 ## Pet oluşturma, getirme ve oluşturulan peti silme
 * Pet için temel ayarları yap
-* Pet oluştur ve gerçek ID'yi sakla
+* Table ile Pet oluştur ve gerçek ID'yi sakla
+| name    | status    |
+|---------|-----------|
+| Karabas | Available |
 * status code "200" olmalı
 * Oluşturulan ID ile peti getir
 * status code "200" olmalı
