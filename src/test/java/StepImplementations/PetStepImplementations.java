@@ -61,10 +61,10 @@ public class PetStepImplementations extends BaseApi {
         System.out.println(">>> Sorgu atılan URL: /pet/" + petId);
         System.out.println(">>> API'den dönen Status Code: " + response.statusCode());
 
-//        System.out.println("-----------------------------------------------------");
-//        System.out.println(">>> Sunucudan gelen pet detayları: ");
-//        System.out.println(response.asPrettyString());
-//        System.out.println("-----------------------------------------------------");
+        System.out.println("-----------------------------------------------------");
+        System.out.println(">>> Sunucudan gelen pet detayları: ");
+        System.out.println(response.asPrettyString());
+        System.out.println("-----------------------------------------------------");
     }
 
     @Step("Table ile Pet bilgilerini güncelle <table>")
